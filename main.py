@@ -1,11 +1,57 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
+from random import randint
 
 def get_value():
     text=entry.get()
     a = tk.Label(gui, text=text).grid(row=10)
-   
+# random selection, up to 21 due to last number not being included
+n = randint(0,21)
+# choose image and solution based on random selection (please don't go checking images, thanks :) )
+if n == 0:
+    values = ['images/pgz.png', 'Primorsko-goranska županija']
+if n == 1:
+    values = ['images/iz.png', 'Istarska županija']
+if n == 2:
+    values = ['images/gz.png', 'Grad Zagreb']
+if n == 3:
+    values = ['images/zz.png', 'Zagrebačka županija']
+if n == 4:
+    values = ['images/zdz.png', 'Zadarska županija']
+if n == 5:
+    values = ['images/sz.png', 'Šibensko-kninska županija']
+if n == 6:
+    values = ['images/sdz.png', 'Šplitsko-dalmatinska županija']
+if n == 7:
+    values = ['images/dnz.png', 'Dubrovačko-neretvanska županija']
+if n == 8:
+    values = ['images/lsz.png', 'Ličko-senjska županija']
+if n == 9:
+    values = ['images/kz.png', 'Karlovačka županija']
+if n == 10:
+    values = ['images/ssz.png', 'Sisačko-moslavačka županija']
+if n == 11:
+    values = ['images/kzz.png', 'Krapinsko-zagorska županija']
+if n == 12:
+    values = ['images/vz.png', 'Varaždinska županija']
+if n == 13:
+    values = ['images/mz.png', 'Međimurska županija']
+if n == 14:
+    values = ['images/kkz.png', 'Koprivničko-križevačka županija']
+if n == 15:
+    values = ['images/bbz.png', 'Bjelovarsko-bilogorska županija']
+if n == 16:
+    values = ['images/vpz.png', 'Virovitičko-podravska županija']
+if n == 17:
+    values = ['images/psz.png', 'Požeško-slavonska županija']
+if n == 18:
+    values = ['images/bpz.png', 'Brodsko-posavska županija']
+if n == 19:
+    values = ['images/obz.png', 'Osječko-baranjska županija']
+if n == 20:
+    values = ['images/vsz.png', 'Vukovarsko-srijemska županija']
+    
 gui = tk.Tk()
 gui.geometry("1024x768")
 gui.grid_columnconfigure(0, weight=1)
@@ -14,7 +60,7 @@ title = tk.Label(gui, text='Croatle', font=('Segoe UI', 25, 'bold'))
 title.grid(row=1, column = 0, columnspan = 2)
 
 # image import
-img= Image.open("images/pgz.png")
+img= Image.open(values[0])
 resize_img = img.resize((400,300), Image.ANTIALIAS)
 image_zup = ImageTk.PhotoImage(resize_img)
 
@@ -51,6 +97,7 @@ text_box5.insert('end', guessval[4])
 text_box5.config(state='disabled')
 text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
 
+# entry part
 entry = tk.Entry(gui)
 entry.grid(row=8, column=0, columnspan = 2, pady=20, ipadx=50)
 button= ttk.Button(gui, text="Enter", command=get_value)
