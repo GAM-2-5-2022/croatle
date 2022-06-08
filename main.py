@@ -3,43 +3,48 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from random import randint
 
-def get_value():
+def checking():
     text=entry.get()
     global x
     global guessval
-    if x == 0:
-        guessval[x] = text
-        text_box1 = tk.Text(gui, height=1, width=50)
+    global values
+    zupanije = ['Primorsko-goranska županija', 'Istarska županija', 'Grad Zagreb', 'Zagrebačka županija', 'Zadarska županija', 'Šibensko-kninska županija', 'Splitsko-dalmatinska županija', 'Dubrovačko-neretvanska županija', 'Ličko-senjska županija', 'Karlovačka županija', 'Sisačko-moslavačka županija', 'Krapinsko-zagorska županija', 'Varaždinska županija', 'Međimurska županija', 'Koprivničko-križevačka županija', 'Bjelovarsko-bilogorska županija', 'Virovitičko-podravska županija', 'Požeško-slavonska županija', 'Brodsko-posavska županija', 'Osječko-baranjska županija', 'Vukovarsko-srijemska županija']
+    for i in range(0, 21):
+        accept = False
+        if zupanije[i].lower() == text.lower():
+            guessval[x] = zupanije[i]
+            accept = True
+            break
+    if x == 0 and accept == True:
+        text_box1 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
         text_box1.insert('end', guessval[x])
         text_box1.config(state='disabled')
         text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
-    if x == 1:
-        guessval[x] = text
-        text_box2 = tk.Text(gui, height=1, width=50)
+    if x == 1 and accept == True:
+        text_box2 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
         text_box2.insert('end', guessval[x])
         text_box2.config(state='disabled')
         text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
-    if x == 2:
-        guessval[x] = text
-        text_box3 = tk.Text(gui, height=1, width=50)
+    if x == 2 and accept == True:
+        text_box3 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
         text_box3.insert('end', guessval[x])
         text_box3.config(state='disabled')
         text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
-    if x == 3:
-        guessval[x] = text
-        text_box4 = tk.Text(gui, height=1, width=50)
+    if x == 3 and accept == True:
+        text_box4 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
         text_box4.insert('end', guessval[x])
         text_box4.config(state='disabled')
         text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
-    if x == 4:
-        guessval[x] = text
-        text_box5 = tk.Text(gui, height=1, width=50)
+    if x == 4 and accept == True:
+        text_box5 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
         text_box5.insert('end', guessval[x])
         text_box5.config(state='disabled')
         text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
-    x += 1
+    if accept == True:
+        x += 1
     return
 
+# guesses left (if the value goes up to 5, the game should show the answer and not allow further input
 x = 0    
 # random selection
 n = randint(0,20)
@@ -57,7 +62,7 @@ if n == 4:
 if n == 5:
     values = ['images/sz.png', 'Šibensko-kninska županija']
 if n == 6:
-    values = ['images/sdz.png', 'Šplitsko-dalmatinska županija']
+    values = ['images/sdz.png', 'Splitsko-dalmatinska županija']
 if n == 7:
     values = ['images/dnz.png', 'Dubrovačko-neretvanska županija']
 if n == 8:
@@ -88,10 +93,10 @@ if n == 20:
     values = ['images/vsz.png', 'Vukovarsko-srijemska županija']
     
 gui = tk.Tk()
-gui.geometry("1024x768")
+gui.geometry("600x800")
 gui.grid_columnconfigure(0, weight=1)
 gui.wm_title('Croatle')
-title = tk.Label(gui, text='Croatle', font=('Segoe UI', 25, 'bold'))
+title = tk.Label(gui, text='Croatle', font=('Arial', 25, 'bold'))
 title.grid(row=1, column = 0, columnspan = 2)
 
 # image import
@@ -106,7 +111,7 @@ img_zup.grid(row=2, column = 0, columnspan = 2)
 # guess values
 guessval = ['', '', '', '', '']
 
-# guesses already done (should change upon a guess)
+# Placeholders for guesses - they will be replaced with boxes that contain guesses using the checking() function
 text_box1 = tk.Text(gui, height=1, width=50)
 text_box1.insert('end', guessval[0])
 text_box1.config(state='disabled')
@@ -134,9 +139,9 @@ text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
 
 
 # entry part
-entry = tk.Entry(gui)
+entry = tk.Entry(gui, font=('Arial', 11, 'bold'))
 entry.grid(row=8, column=0, columnspan = 2, pady=20, ipadx=50)
-button= ttk.Button(gui, text="Enter", command=get_value)
+button= ttk.Button(gui, text="Enter", command=checking)
 button.grid(row=9, column=0, columnspan = 2, pady=20, ipadx=50)
 
 gui.mainloop()
