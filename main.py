@@ -8,33 +8,33 @@ def get_value():
     global x
     global guessval
     if x == 0:
-        guessval[0] = text
+        guessval[x] = text
         text_box1 = tk.Text(gui, height=1, width=50)
-        text_box1.insert('end', guessval[0])
+        text_box1.insert('end', guessval[x])
         text_box1.config(state='disabled')
         text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
     if x == 1:
-        guessval[1] = text
+        guessval[x] = text
         text_box2 = tk.Text(gui, height=1, width=50)
-        text_box2.insert('end', guessval[1])
+        text_box2.insert('end', guessval[x])
         text_box2.config(state='disabled')
         text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
     if x == 2:
-        guessval[2] = text
+        guessval[x] = text
         text_box3 = tk.Text(gui, height=1, width=50)
-        text_box3.insert('end', guessval[2])
+        text_box3.insert('end', guessval[x])
         text_box3.config(state='disabled')
         text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
     if x == 3:
-        guessval[3] = text
+        guessval[x] = text
         text_box4 = tk.Text(gui, height=1, width=50)
-        text_box4.insert('end', guessval[3])
+        text_box4.insert('end', guessval[x])
         text_box4.config(state='disabled')
         text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
     if x == 4:
-        guessval[4] = text
+        guessval[x] = text
         text_box5 = tk.Text(gui, height=1, width=50)
-        text_box5.insert('end', guessval[4])
+        text_box5.insert('end', guessval[x])
         text_box5.config(state='disabled')
         text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
     x += 1
