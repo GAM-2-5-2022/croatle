@@ -5,9 +5,44 @@ from random import randint
 
 def get_value():
     text=entry.get()
-    a = tk.Label(gui, text=text).grid(row=10)
-# random selection, up to 21 due to last number not being included
-n = randint(0,21)
+    global x
+    global guessval
+    if x == 0:
+        guessval[0] = text
+        text_box1 = tk.Text(gui, height=1, width=50)
+        text_box1.insert('end', guessval[0])
+        text_box1.config(state='disabled')
+        text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
+    if x == 1:
+        guessval[1] = text
+        text_box2 = tk.Text(gui, height=1, width=50)
+        text_box2.insert('end', guessval[1])
+        text_box2.config(state='disabled')
+        text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
+    if x == 2:
+        guessval[2] = text
+        text_box3 = tk.Text(gui, height=1, width=50)
+        text_box3.insert('end', guessval[2])
+        text_box3.config(state='disabled')
+        text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
+    if x == 3:
+        guessval[3] = text
+        text_box4 = tk.Text(gui, height=1, width=50)
+        text_box4.insert('end', guessval[3])
+        text_box4.config(state='disabled')
+        text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
+    if x == 4:
+        guessval[4] = text
+        text_box5 = tk.Text(gui, height=1, width=50)
+        text_box5.insert('end', guessval[4])
+        text_box5.config(state='disabled')
+        text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
+    x += 1
+    return
+
+x = 0    
+# random selection
+n = randint(0,20)
 # choose image and solution based on random selection (please don't go checking images, thanks :) )
 if n == 0:
     values = ['images/pgz.png', 'Primorsko-goranska županija']
@@ -30,7 +65,7 @@ if n == 8:
 if n == 9:
     values = ['images/kz.png', 'Karlovačka županija']
 if n == 10:
-    values = ['images/ssz.png', 'Sisačko-moslavačka županija']
+    values = ['images/smz.png', 'Sisačko-moslavačka županija']
 if n == 11:
     values = ['images/kzz.png', 'Krapinsko-zagorska županija']
 if n == 12:
@@ -96,6 +131,7 @@ text_box5 = tk.Text(gui, height=1, width=50)
 text_box5.insert('end', guessval[4])
 text_box5.config(state='disabled')
 text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
+
 
 # entry part
 entry = tk.Entry(gui)
