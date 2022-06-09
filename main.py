@@ -11,35 +11,83 @@ def checking():
     zupanije = ['Primorsko-goranska županija', 'Istarska županija', 'Grad Zagreb', 'Zagrebačka županija', 'Zadarska županija', 'Šibensko-kninska županija', 'Splitsko-dalmatinska županija', 'Dubrovačko-neretvanska županija', 'Ličko-senjska županija', 'Karlovačka županija', 'Sisačko-moslavačka županija', 'Krapinsko-zagorska županija', 'Varaždinska županija', 'Međimurska županija', 'Koprivničko-križevačka županija', 'Bjelovarsko-bilogorska županija', 'Virovitičko-podravska županija', 'Požeško-slavonska županija', 'Brodsko-posavska županija', 'Osječko-baranjska županija', 'Vukovarsko-srijemska županija']
     for i in range(0, 21):
         accept = False
-        if zupanije[i].lower() == text.lower():
-            guessval[x] = zupanije[i]
-            accept = True
-            break
+        if x < 5:
+            if zupanije[i].lower() == text.lower():
+                guessval[x] = zupanije[i]
+                accept = True
+                break
     if x == 0 and accept == True:
-        text_box1 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
-        text_box1.insert('end', guessval[x])
-        text_box1.config(state='disabled')
-        text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
+        if text.lower() == values[1].lower():
+            text_box1 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#52FF52', fg='#000000')
+            text_box1.insert('end', guessval[x])
+            text_box1.config(state='disabled')
+            text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
+            button.config(state='disabled')
+            notice = tk.Label(gui, text='Pogodili ste u 1. pokušaju!', font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        else:
+            text_box1 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#FF6A6A', fg='#000000')
+            text_box1.insert('end', guessval[x])
+            text_box1.config(state='disabled')
+            text_box1.grid(row=3, column = 0, columnspan = 2, pady=2)
     if x == 1 and accept == True:
-        text_box2 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
-        text_box2.insert('end', guessval[x])
-        text_box2.config(state='disabled')
-        text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
+        if text.lower() == values[1].lower():
+            text_box2 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#52FF52', fg='#000000')
+            text_box2.insert('end', guessval[x])
+            text_box2.config(state='disabled')
+            text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
+            button.config(state='disabled')
+            notice = tk.Label(gui, text='Pogodili ste u 2. pokušaju!', font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        else:
+            text_box2 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#FF6A6A', fg='#000000')
+            text_box2.insert('end', guessval[x])
+            text_box2.config(state='disabled')
+            text_box2.grid(row=4, column = 0, columnspan = 2, pady=2)
     if x == 2 and accept == True:
-        text_box3 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
-        text_box3.insert('end', guessval[x])
-        text_box3.config(state='disabled')
-        text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
+        if text.lower() == values[1].lower():
+            text_box3 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#52FF52', fg='#000000')
+            text_box3.insert('end', guessval[x])
+            text_box3.config(state='disabled')
+            text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
+            button.config(state='disabled')
+            notice = tk.Label(gui, text='Pogodili ste u 3. pokušaju!', font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        else:
+            text_box3 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#FF6A6A', fg='#000000')
+            text_box3.insert('end', guessval[x])
+            text_box3.config(state='disabled')
+            text_box3.grid(row=5, column = 0, columnspan = 2, pady=2)
     if x == 3 and accept == True:
-        text_box4 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
-        text_box4.insert('end', guessval[x])
-        text_box4.config(state='disabled')
-        text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
+        if text.lower() == values[1].lower():
+            text_box4 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#52FF52', fg='#000000')
+            text_box4.insert('end', guessval[x])
+            text_box4.config(state='disabled')
+            text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
+            button.config(state='disabled')
+            notice = tk.Label(gui, text='Pogodili ste u 4. pokušaju!', font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        else:
+            text_box4 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#FF6A6A', fg='#000000')
+            text_box4.insert('end', guessval[x])
+            text_box4.config(state='disabled')
+            text_box4.grid(row=6, column = 0, columnspan = 2, pady=2)
     if x == 4 and accept == True:
-        text_box5 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'))
-        text_box5.insert('end', guessval[x])
-        text_box5.config(state='disabled')
-        text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
+        if text.lower() == values[1].lower():
+            text_box5 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#52FF52', fg='#000000')
+            text_box5.insert('end', guessval[x])
+            text_box5.config(state='disabled')
+            text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
+            notice = tk.Label(gui, text='Pogodili ste u 5. pokušaju!', font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        else:
+            text_box5 = tk.Text(gui, height=1, width=50, font=('Arial', 11, 'bold'), bg='#FF6A6A', fg='#000000')
+            text_box5.insert('end', guessval[x])
+            text_box5.config(state='disabled')
+            text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
+            notice = tk.Label(gui, text='Točan odgovor je: %s'%values[1], font=('Arial', 16, 'bold'))
+            notice.grid(row=10, column=0, columnspan = 2, pady=20, ipadx=50)
+        button.config(state='disabled')
     if accept == True:
         x += 1
     return
@@ -141,7 +189,7 @@ text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
 # entry part
 entry = tk.Entry(gui, font=('Arial', 11, 'bold'))
 entry.grid(row=8, column=0, columnspan = 2, pady=20, ipadx=50)
-button= ttk.Button(gui, text="Enter", command=checking)
+button = ttk.Button(gui, text="Enter", command=checking)
 button.grid(row=9, column=0, columnspan = 2, pady=20, ipadx=50)
 
 gui.mainloop()
