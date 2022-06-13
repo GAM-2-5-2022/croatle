@@ -149,7 +149,7 @@ title.grid(row=1, column = 0, columnspan = 2)
 
 # image import
 img= Image.open(values[0])
-resize_img = img.resize((400,300), Image.ANTIALIAS)
+resize_img = img.resize((400,300))
 image_zup = ImageTk.PhotoImage(resize_img)
 
 # image
