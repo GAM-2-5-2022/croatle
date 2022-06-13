@@ -141,25 +141,21 @@ if n == 20:
     values = ['images/vsz.png', 'Vukovarsko-srijemska županija']
     
 gui = tk.Tk()
-gui.geometry("600x800")
+gui.geometry("750x750")
 gui.grid_columnconfigure(0, weight=1)
 gui.wm_title('Croatle')
 title = tk.Label(gui, text='Croatle', font=('Arial', 25, 'bold'))
 title.grid(row=1, column = 0, columnspan = 2)
 
-# image import
 img= Image.open(values[0])
 resize_img = img.resize((400,300))
 image_zup = ImageTk.PhotoImage(resize_img)
 
-# image
 img_zup = tk.Label(gui, image = image_zup)
 img_zup.grid(row=2, column = 0, columnspan = 2)
 
-# guess values
 guessval = ['', '', '', '', '']
 
-# Placeholders for guesses - they will be replaced with boxes that contain guesses using the checking() function
 text_box1 = tk.Text(gui, height=1, width=50)
 text_box1.insert('end', guessval[0])
 text_box1.config(state='disabled')
@@ -185,8 +181,6 @@ text_box5.insert('end', guessval[4])
 text_box5.config(state='disabled')
 text_box5.grid(row=7, column = 0, columnspan = 2, pady=2)
 
-
-# entry part
 entry = tk.Entry(gui, font=('Arial', 11, 'bold'))
 entry.grid(row=8, column=0, columnspan = 2, pady=20, ipadx=50)
 button = ttk.Button(gui, text="Enter", command=checking)
